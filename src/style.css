@@ -1,0 +1,132 @@
+/* Include the padding and border in an element's total width and height */
+ body {
+  box-sizing: border-box;
+}
+
+
+
+h1{
+    color: blue;
+    text-shadow: -2px -6px 2px red;
+    font-size:300%;
+    text-align: center;
+}
+p {text-align: center;
+  font-size:xx-large;
+}
+
+/* navigation menu */
+
+#nav_menu ul {
+  list-style-type: none;
+  margin: 1.8em;
+  padding: 0;
+} 
+
+#nav_menu ul li { float: left; }
+  
+#nav_menu ul li a {
+  text-align: center;
+  display: block;
+  width: 180px;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+  font-weight: bolder;
+  border-right: 5px solid white;
+ }
+#nav_menu ul li a:hover {  background: #ddddddce; }
+
+
+main{
+  border: 3px solid darkblue;
+  padding: 0.5em;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  font-size: 250%;
+
+  color: blue;
+  text-shadow: -2px -2px 2px red;
+} 
+
+/* Style the list items */
+ #myUL li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: lightskyblue;
+  list-style-type: none;
+ 
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: lightskyblue;
+}
+
+
+/* Darker background-color on hover */
+#myUL ul li:hover {
+  background: #ddddddce;
+}
+
+
+
+/* Style the header */
+.header {
+  background-color:  lightskyblue;
+  padding: 50px 50px;
+ 
+  text-align: center;
+  font-size:large;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 60%;
+  padding: 10px;
+  float: left;
+  font-size: 18px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: blue;
+  color: #080808;
+  float: left;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.addBtn:hover {
+  background-color: red;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right:0;
+  top: 10;
+  color: black;
+  size: 300%;
+  padding: 0px 100px 12px 160px;
+}
