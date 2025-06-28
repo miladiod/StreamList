@@ -13,12 +13,13 @@ function App() {
         <header>
           <h1>EZTechMovie</h1>
           <p><b>Welcome to EZTechMovie</b></p>
+          <p>EZTechMovie is focus on popular mainstream movies, so online movie rentals are a fantastic alternative to streaming service subscriptions.</p>
           <nav id="nav_menu">
             <ul>
-              <li><Link to="/">HOME</Link></li>
+              <li id="first"><Link to="/">HOME</Link></li>
               <li><Link to="/movies">MOVIE</Link></li>
               <li><Link to="/cart">CART</Link></li>
-              <li><Link to="/about">ABOUT</Link></li>
+              <li id="last"><Link to="/about">ABOUT</Link></li>
             </ul>
           </nav>
         </header>
