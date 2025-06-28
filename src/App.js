@@ -16,10 +16,10 @@ function App() {
           <p>EZTechMovie is focus on popular mainstream movies, so online movie rentals are a fantastic alternative to streaming service subscriptions.</p>
           <nav id="nav_menu">
             <ul>
-              <li id="first"><Link to="/">HOME</Link></li>
+              <li><Link to="/">HOME</Link></li>
               <li><Link to="/movies">MOVIE</Link></li>
               <li><Link to="/cart">CART</Link></li>
-              <li id="last"><Link to="/about">ABOUT</Link></li>
+              <li><Link to="/about">ABOUT</Link></li>
             </ul>
           </nav>
         </header>
