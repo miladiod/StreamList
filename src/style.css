@@ -172,3 +172,14 @@ input {
 .save-btn:hover {
   color: rgba(47, 255, 109, 0.979)   /* Green for save */
 }
+/*styling TMDB*/
+.movieList {
+  background-color: lightsteelblue;
+  }
+.movie-list {
+  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  margin: 5rem;
+  grid-gap: 20px;
+}

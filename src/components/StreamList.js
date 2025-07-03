@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faEdit, faCheck, faUndo } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faEdit, faCheck } from '@fortawesome/free-solid-svg-icons';
 
+import { getPopularMovies } from '../api/tmdb';
 
-
+//const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 const StreamList = () => {
   const [input, setInput] = useState('');
   const [items, setItems] = useState([]);
   const [isEditing, setIsEditing] = useState(null);
   const [editInput, setEditInput] = useState('');
+  const [movies, setMovies] = useState([]);
   
   
 
@@ -46,11 +49,26 @@ const startEditing = (index) => {
     setItems(updatedItems);
   };
 
+  useEffect(() => {
+  const fetchMovies = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`
+      );
+      console.log('Fetched movies from TMDB:', response.data.results);
+      setMovies(response.data.results);
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    }
+    
+  };
 
+  fetchMovies();
+}, []);
 
   return (
     <main className="streamlist-container">
-      <h2>My StreamList</h2>
+      <h2>Welcome to StreamList App</h2>
       <p> Here are the best sites for watching and renting movies online!</p>
       
       <div id="myDIV" className="header">
@@ -104,6 +122,21 @@ const startEditing = (index) => {
           </li>
         ))}
       </ul>
+      <div className="movieList">
+      <h2>Popular Movies:</h2>
+      <ul className="movie-list" style={{ listStyle: 'none', padding: 0 }}>
+        {movies.map((movie) => (
+          <li key={movie.id} style={{ marginBottom: '20px' }}>
+            <img
+              src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+              alt={movie.title}
+              style={{ width: '100px', display: 'block' }}
+            />
+            <p>{movie.title} ({movie.release_date})</p>
+          </li>
+        ))}
+      </ul>
+    </div>
     </main>
   );
 };
