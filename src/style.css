@@ -1,3 +1,27 @@
+:root {
+  --primary-color: blue;
+  --secondary-color: red;
+  --accent-color: lightskyblue;
+  --text-color-light: white;
+  --text-color-dark: #080808;
+  --warning-color: #d8000c;
+  --warning-bg: pink;
+  --hover-dark: #555;
+  --hover-red: darkred;
+  --success-color: rgba(47, 255, 109, 0.979);
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 10px;
+  --border-radius-pill: 80px;
+}
+
 /* Include the padding and border in an element's total width and height */
  body {
   margin: 0;
@@ -9,14 +33,12 @@
 
 
 h1 {
-    color: blue;
-    text-shadow: -2px -6px 2px red;
-    font-size:300%;
-    text-align: center;
+  color: var(--primary-color);
+  text-shadow: -2px -6px 2px var(--secondary-color);
 }
 
 p {text-align: center;
-  font-size:xx-large;
+  font-size: x-large;
 }
 
 /* navigation menu */
@@ -48,7 +70,9 @@ p {text-align: center;
   transition: background-color 0.3s;
   background-color: blue;
   border-right: 5px solid white;
+  border-right: 5px solid var(--text-color-light); /* Use variable */
 }
+
 #nav_menu li a:hover {
   background-color: #555;
 }
@@ -81,21 +105,12 @@ h2 {
   -ms-user-select: none;
   user-select: none;
   }
+.input-group {
+  display: flex;
+  margin: 2em; /* Or whatever margin you need for the group */
+}
 
 
-
-/* Style the header */
-.header {
-  margin: 2em;
-  padding: 2em;
-  }
-
-/* Clear floats after the header 
-.header:after {
-  content: "";
-  display: table;
-  clear: both; 
-}*/
 
 /* Style the input */
 input {
@@ -112,7 +127,7 @@ input {
 .addBtn {
   padding: 10px;
   width: 25%;
-  background: blue;
+   background: var(--primary-color); /* Use variable */
   color: #080808;
   float: left;
   text-align: center;
@@ -172,9 +187,9 @@ input {
 .save-btn:hover {
   color: rgba(47, 255, 109, 0.979)   /* Green for save */
 }
-/*styling TMDB*/
+/*styling Movie.js*/
 .movieList {
-  background-color: lightsteelblue;
+  background-color: lightskyblue;
   }
 .movie-list {
   
@@ -182,4 +197,144 @@ input {
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   margin: 5rem;
   grid-gap: 20px;
+}
+.movie-list p {
+  font-size: smaller;
+  text-align:justify;
+  font-weight: 700;
+
+}
+
+/*styling Subscription*/
+.subscription-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+
+}
+.section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+.items-grid img {
+  max-width:100px;
+  height: 100px;;  
+  align-items:center;
+  justify-content:center;
+  margin: 0 auto;
+}
+
+.items-grid {
+   margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: lightskyblue;
+  border: 8px solid blue;
+  justify-items: center;
+ }
+.subscription-details {
+  flex-direction: row;
+  align-items: center; /* this centers the button horizontally */
+  text-align: center;
+}
+.title {
+  margin: 10px;
+  padding: 20px;
+}
+.subscription-details p {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.subscription-details h4 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+ .subscription-details button {
+  padding: 0.5rem 1rem;
+  transition: background 0.3s ease;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 18px 20px;
+  border-radius: 80px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+    
+}
+
+
+button:hover {
+  background-color: darkred;
+}
+
+.subscription-warning {
+  background-color: pink;
+  color: #d8000c;
+  border: 2px solid #d8000c;
+  padding: 1rem;
+  margin-top: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+/*styling Cart.js*/
+.cart-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 5px solid blue;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  background-color: lightskyblue;
+  flex-wrap: wrap;
+}
+
+.cart-details {
+  flex: 1;
+  min-width: 200px;
+  padding-left: 1rem;
+}
+
+.cart-details h4 {
+  margin: 0;
+  font-size: 150%;
+  }
+
+.cart-details input {
+  width: 200px;
+  padding: 4px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.cart-item img {
+  border: 1px solid yellow;
+  border-radius: 6px;
+}
+
+.cart-item button {
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  margin-top: 10px;
+  font-weight: bold;
+  }
+
+.cart-item button:hover {
+  background-color: darkred;
+}
+
+.cart-summary {
+  text-align: right;
+  font-weight: bold;
+  font-size: 120%;
+  margin-top: 30px;
 }
