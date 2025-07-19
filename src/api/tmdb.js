@@ -1,20 +1,14 @@
+// Example content for ../api/tmdb.js
 import axios from 'axios';
 
-const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
-const BASE_URL = 'https://api.themoviedb.org/3';
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY; // Ensure your .env file has this
 
 export const getPopularMovies = async () => {
-  try {
-    const response = await axios.get(`${BASE_URL}/movie/popular`, {
-      params: {
-        api_key: API_KEY,
-        language: 'en-US',
-        page: 1
-      }
-    });
-    return response.data.results;
-  } catch (error) {
-    console.error('Error fetching popular movies:', error);
-    return [];
+  if (!API_KEY) {
+    throw new Error('TMDB API Key is not defined. Please set REACT_APP_TMDB_API_KEY in your .env file.');
   }
+  const response = await axios.get(
+    `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`
+  );
+  return response.data; // Return the data directly
 };
